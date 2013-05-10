@@ -1,0 +1,24 @@
+# ~/.tmuxinator/ld.yml
+# you can make as many tabs as you wish...
+
+project_name: ld
+project_root: ~/LeanData/ld-server
+rvm:
+pre:
+tabs:
+  - processes:
+      layout: even-horizontal
+      panes:
+        - zeus s -p 3000
+        - zeus rake jobs:work
+  - git:
+      layout: bc36,364x91,0,0{170x91,0,0,2,111x91,171,0[111x46,171,0,8,111x44,171,47,9],81x91,283,0,10}
+      panes:
+        - # grep here
+        - watch git status
+        - watch git diff
+        - watch git log
+  - code: cd app; vim .
+  - console: zeus console
+  - db: zeus dbconsole
+

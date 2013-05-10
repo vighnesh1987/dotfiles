@@ -1,0 +1,103 @@
+
+"------------------------------------------------------------ Misc
+" color syntax for ejs files
+au BufNewFile,BufRead *.ejs set filetype=html
+
+" Match tags
+runtime macros/matchit.vim
+
+"----------------------------------------------------------- Key combo mappings
+" Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
+" nnoremap ; :
+" UNDID this because ; is used to repeat f/t/F/T searches
+
+" Reverse of J
+:nnoremap K i<CR><Esc>
+
+" Stupid shift key fixes
+"cmap W w
+"cmap WQ wq
+"cmap wQ wq
+"cmap Q q
+
+" visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
+" Replace <C-w> with ', required for switching between vim panes
+:map ' <C-w>
+
+:map <leader>v :vsplit<cr>
+:map <Leader>nn :set nonu<CR>
+:map gr :tabp<CR>
+" Search and replace using current word
+:map <Leader>rr "hy:%s/<C-r>h//gc<left><left><left>
+" Narrow region for focussed editing
+:map <Leader>nrg :NarrowRegion<CR>
+
+":map <leader>t :TlistToggle<cr>
+":map <Leader>r :TlistUpdate<CR>
+":map <Leader>n  :set nu<CR>
+
+" === Highlight: Toggle hlsearch ===
+:map <Leader>hh <Leader>hs<CR>
+" ==== Highlight current line and column===
+:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:nnoremap <Leader>hc :set cursorline! cursorcolumn!<CR>
+
+"------------------------------------------------------------ CTRL mappings
+" YankRing steals <c-p>
+:map <c-p> :CtrlP<CR>
+
+"------------------------------------------------------------ Status line
+"set statusline+=\ [%{CurDir()}]          " current dir
+function! CurDir()
+  let curdir = substitute(getcwd(), '/Users/Rege/Dropbox/Courses/Spr12/CS142/Sites', "sites", "g")
+  let curdir = substitute(curdir, '/Users/Rege/Dropbox/Courses/Sum12', "sum12", "g")
+  let curdir = substitute(curdir, '/Users/Rege/Dropbox', "dropbox", "g")
+  let curdir = substitute(curdir, '/Users/Rege', "~", "g")
+  return curdir
+endfunction
+
+"----------------------------------------------------------- Function key mappings
+"<F1> - opens up help in split window 
+:map <F2> :%s/\t/  /gc<CR>
+"syntax highlighting toggle
+:map <F3> :noh<CR> 
+"<F4> - toggle paste
+"<F5> :GundoShow
+"<F6>
+:map <F7> :if exists("g:syntax_on") <Bar>
+		\   syntax off <Bar>
+		\ else <Bar>
+		\   syntax enable <Bar>
+		\ endif <CR>
+"<F8>
+"<F9>
+:map <F10> :YRShow<CR>
+"System uses <F11>, <F12> - show desktop, etc
+
+"----------------------------------------------------------- Text formatting
+" LeanData style
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+":color railscasts
+":color Tomorrow-Night-Bright
+:color default
+":color smyck
+":color Tomorrow-Night-Eighties
+":color railscasts2
+
+" indentLevel
+let g:indentLine_color_term='235'
+let g:indentLine_char='│'
+let g:indentLine_showFirstIndentLevel=1
+hi SpecialKey ctermfg=235
+set list lcs=tab:\│\ 
+
+
+

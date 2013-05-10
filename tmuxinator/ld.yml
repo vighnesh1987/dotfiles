@@ -1,0 +1,29 @@
+# ~/.tmuxinator/ld.yml
+# you can make as many tabs as you wish...
+
+project_name: ld
+project_root: ~/LeanData/ld-server
+rvm:
+pre:
+tabs:
+  - server/config:
+      layout: even-horizontal
+      panes:
+        - rails s -p 3000
+        - vim -p config/routes.rb db/schema.rb
+  - grep/git:
+      layout: 55cc,364x91,0,0{185x91,0,0,2,90x91,186,0[90x25,186,0,8,90x65,186,26,13],87x91,277,0,9}
+      panes:
+        - # grep here
+        - watch git status
+        - watch git diff
+        - watch git log
+  - models: cd app/models && vim .
+  - controllers: cd app/controllers && vim .
+  - views: cd app/views && vim .
+  - js/css:
+      layout: even-horizontal
+      panes:
+        - cd app/assets/javascripts && vim .
+        - cd app/assets/stylesheets && vim .
+

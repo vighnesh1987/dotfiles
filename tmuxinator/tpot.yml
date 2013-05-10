@@ -1,0 +1,26 @@
+# ~/.tmuxinator/tpot.yml
+# you can make as many tabs as you wish...
+
+project_name: tpot
+project_root: ~/Developer/tpot/
+rvm:
+pre: pg_ctl -D /usr/local/var/postgres/ -l /usr/local/var/postgres/server.log start & mailcatcher
+tabs:
+  - server:
+      layout: even-horizontal
+      panes:
+        - rails s -p 5000
+        - pry -r ./config/environment
+        - rails dbconsole
+  - git:
+      layout: even-horizontal 
+      panes:
+        - git status
+        - git log
+  - views: vim app/views
+  - controllers: vim app/controllers
+  - models: vim app/models
+  - helpers: vim app/helpers
+  - mailers: vim -p app/views/user_mailer app/assets/stylesheets/email.css.scss app/mailers/user_mailer.rb
+  - assets: vim app/assets
+  - logs: tail -f log/development.log

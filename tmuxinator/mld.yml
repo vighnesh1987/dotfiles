@@ -1,0 +1,25 @@
+# ~/.tmuxinator/ld.yml
+# you can make as many tabs as you wish...
+
+project_name: ld
+project_root: ~/LeanData/ld-server
+rvm:
+pre:
+tabs:
+  - processes:
+      layout: 55b2,364x91,0,0{181x91,0,0,0,182x91,182,0[182x45,182,0,5,182x45,182,46,27]} 
+      panes:
+        - rails s -p 3000
+        - bundle exec guard -c
+        - rake jobs:work
+  - git:
+      layout: bc36,364x91,0,0{170x91,0,0,2,111x91,171,0[111x46,171,0,8,111x44,171,47,9],81x91,283,0,10}
+      panes:
+        - # grep here
+        - watch git status
+        - watch git diff
+        - watch git log
+  - code: cd app; vim .
+  - console: rails console
+  - db: rails dbconsole
+
