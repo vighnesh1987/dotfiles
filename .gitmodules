@@ -1,9 +1,6 @@
 [submodule "vim"]
 	path = vim
 	url = https://github.com/carlhuda/janus.git
-[submodule "indentLine"]
-	path = janus/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
 [submodule "keepcase"]
 	path = janus/keepcase
 	url = https://github.com/vim-scripts/keepcase.vim.git
@@ -18,4 +15,22 @@
 	url = https://github.com/vim-scripts/YankRing.vim.git
 [submodule "vim-powerline"]
 	path = janus/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "janus_plugins/indentLine"]
+	path = janus_plugins/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
+[submodule "janus_plugins/keepcase"]
+	path = janus_plugins/keepcase
+	url = https://github.com/vim-scripts/keepcase.vim.git
+[submodule "janus_plugins/ack"]
+	path = janus_plugins/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "janus_plugins/Align"]
+	path = janus_plugins/Align
+	url = https://github.com/vim-scripts/Align.git
+[submodule "janus_plugins/YankRing.vim"]
+	path = janus_plugins/YankRing.vim
+	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule "janus_plugins/vim-powerline"]
+	path = janus_plugins/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
