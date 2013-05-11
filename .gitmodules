@@ -1,6 +1,7 @@
 [submodule "vim"]
 	path = vim
 	url = https://github.com/carlhuda/janus.git
+  ignore = dirty
 [submodule "keepcase"]
 	path = janus/keepcase
 	url = https://github.com/vim-scripts/keepcase.vim.git
