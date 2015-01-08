@@ -9,10 +9,13 @@
 	url = https://github.com/vim-scripts/Align.git
 [submodule "janus/YankRing.vim"]
 	path = janus/YankRing.vim
-	url = https://github.com/vim-scripts/YankRing.vim.git
+	url = git@github.com:vim-scripts/YankRing.vim.git
 [submodule "janus/vim-powerline"]
 	path = janus/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "janus/indentLine"]
 	path = janus/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "janus/vim-align"]
+	path = janus/vim-align
+	url = git@github.com:vim-scripts/Align.git

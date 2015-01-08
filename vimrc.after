@@ -24,7 +24,7 @@ runtime macros/matchit.vim
 vnoremap < <gv
 vnoremap > >gv
 
-" Replace <C-w> with ', required for switching between vim panes
+" Remap leader key
 :map ' <C-w>
 
 :map <leader>v :vsplit<cr>
@@ -45,6 +45,17 @@ vnoremap > >gv
 :hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 :hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 :nnoremap <Leader>hc :set cursorline! cursorcolumn!<CR>
+
+" == rm
+:map <Leader>remove :call delete(expand('%'))
+
+" ==== Rspec ====
+let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_runner = "os_x_iterm"
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 "------------------------------------------------------------ CTRL mappings
 " YankRing steals <c-p>
@@ -79,18 +90,16 @@ endfunction
 "System uses <F11>, <F12> - show desktop, etc
 
 "----------------------------------------------------------- Text formatting
-" LeanData style
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
+" Wearable style
+"set noet ci pi sts=0 sw=4 ts=4
 
 ":color railscasts
 ":color Tomorrow-Night-Bright
-:color default
+":color default
 ":color smyck
 ":color Tomorrow-Night-Eighties
 ":color railscasts2
+:color jellybeans
 
 " indentLevel
 let g:indentLine_color_term='235'
@@ -99,5 +108,5 @@ let g:indentLine_showFirstIndentLevel=1
 hi SpecialKey ctermfg=235
 set list lcs=tab:\│\ 
 
-
+"set clipboard+=unnamed
 

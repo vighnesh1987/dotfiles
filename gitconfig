@@ -1,11 +1,14 @@
 [user]
 	name = Vighnesh Rege
 	email = vighnesh1987@gmail.com
-[credential]
-	helper = osxkeychain
 [core]
-  excludesfile = /Users/Rege/.gitignore_global
+	editor = vim
+[merge]
+	tool = vimdiff
 [color]
   ui = auto
 [alias]
   conflicts = !git ls-files -u | cut -f 2 | sort -u
+
+[push]
+	default = simple

@@ -1,14 +1,13 @@
-
+export BASH_CONF="bash_login"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 #echo "> srcing  Tmuxinator from bash_profile"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # Load Tmuxinator script for custom tmux sessions
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator_completion # Completion for Tmuxinator commands
 
-
-# For jruby/rails
-#echo "> jruby_opts set to 1.9"
-export JRUBY_OPTS=--1.9
+# MacPorts Installer addition on 2014-09-22_at_14:07:34: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
 
 #echo "> srcing .bashrc"
 if [ -f ~/.bashrc ]; then
