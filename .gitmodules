@@ -16,3 +16,6 @@
 [submodule "janus/vim-align"]
 	path = janus/vim-align
 	url = git@github.com:vim-scripts/Align.git
+[submodule "janus/indentLine.vim"]
+	path = janus/indentLine.vim
+	url = git@github.com:vim-scripts/indentLine.vim.git
