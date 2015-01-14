@@ -1,6 +1,3 @@
-[submodule "janus/keepcase.vim"]
-	path = janus/keepcase.vim
-	url = https://github.com/vim-scripts/keepcase.vim.git
 [submodule "janus/ack.vim"]
 	path = janus/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
@@ -19,3 +16,6 @@
 [submodule "janus/indentLine.vim"]
 	path = janus/indentLine.vim
 	url = git@github.com:vim-scripts/indentLine.vim.git
+[submodule "janus/keepcase.vim"]
+	path = janus/keepcase.vim
+	url = git@github.com:vim-scripts/keepcase.vim.git
