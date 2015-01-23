@@ -74,11 +74,11 @@ endfunction
 "----------------------------------------------------------- Function key mappings
 "<F1> - opens up help in split window 
 :map <F2> :%s/\t/  /gc<CR>
-"syntax highlighting toggle
 :map <F3> :noh<CR> 
 "<F4> - toggle paste
 "<F5> :GundoShow
 "<F6>
+"syntax highlighting toggle
 :map <F7> :if exists("g:syntax_on") <Bar>
 		\   syntax off <Bar>
 		\ else <Bar>
