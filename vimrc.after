@@ -6,19 +6,8 @@ au BufNewFile,BufRead *.ejs set filetype=html
 " Match tags
 runtime macros/matchit.vim
 
-"----------------------------------------------------------- Key combo mappings
-" Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
-" nnoremap ; :
-" UNDID this because ; is used to repeat f/t/F/T searches
-
 " Reverse of J
 :nnoremap K i<CR><Esc>
-
-" Stupid shift key fixes
-"cmap W w
-"cmap WQ wq
-"cmap wQ wq
-"cmap Q q
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
@@ -35,12 +24,6 @@ vnoremap > >gv
 " Narrow region for focussed editing
 :map <Leader>nrg :NarrowRegion<CR>
 
-":map <leader>t :TlistToggle<cr>
-":map <Leader>r :TlistUpdate<CR>
-":map <Leader>n  :set nu<CR>
-
-" === Highlight: Toggle hlsearch ===
-:map <Leader>hh <Leader>hs<CR>
 " ==== Highlight current line and column===
 :hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 :hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
@@ -49,50 +32,29 @@ vnoremap > >gv
 " == rm
 :map <Leader>remove :call delete(expand('%'))
 
-" ==== Rspec ====
-let g:rspec_command = "Dispatch rspec {spec}"
-let g:rspec_runner = "os_x_iterm"
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
 "------------------------------------------------------------ CTRL mappings
 " YankRing steals <c-p>
 :map <c-p> :CtrlP<CR>
 
-"------------------------------------------------------------ Status line
-"set statusline+=\ [%{CurDir()}]          " current dir
-function! CurDir()
-  let curdir = substitute(getcwd(), '/Users/Rege/Dropbox/Courses/Spr12/CS142/Sites', "sites", "g")
-  let curdir = substitute(curdir, '/Users/Rege/Dropbox/Courses/Sum12', "sum12", "g")
-  let curdir = substitute(curdir, '/Users/Rege/Dropbox', "dropbox", "g")
-  let curdir = substitute(curdir, '/Users/Rege', "~", "g")
-  return curdir
-endfunction
-
 "----------------------------------------------------------- Function key mappings
-"<F1> - opens up help in split window 
+"<F1> - opens up help in split window
 :map <F2> :%s/\t/  /gc<CR>
-:map <F3> :noh<CR> 
+:map <F3> :noh<CR>
 "<F4> - toggle paste
 "<F5> :GundoShow
 "<F6>
 "syntax highlighting toggle
 :map <F7> :if exists("g:syntax_on") <Bar>
-		\   syntax off <Bar>
-		\ else <Bar>
-		\   syntax enable <Bar>
-		\ endif <CR>
+    \   syntax off <Bar>
+    \ else <Bar>
+    \   syntax enable <Bar>
+    \ endif <CR>
 "<F8>
 "<F9>
 :map <F10> :YRShow<CR>
 "System uses <F11>, <F12> - show desktop, etc
 
 "----------------------------------------------------------- Text formatting
-" Wearable style
-"set noet ci pi sts=0 sw=4 ts=4
-
 ":color railscasts
 ":color Tomorrow-Night-Bright
 ":color default
@@ -101,12 +63,5 @@ endfunction
 ":color railscasts2
 :color jellybeans
 
-" indentLevel
-let g:indentLine_color_term='235'
-let g:indentLine_char='│'
-let g:indentLine_showFirstIndentLevel=1
-hi SpecialKey ctermfg=235
-set list lcs=tab:\│\ 
 
-"set clipboard+=unnamed
-
+let g:indentLine_color = 111
