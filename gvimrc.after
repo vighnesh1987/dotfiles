@@ -1,8 +1,0 @@
-if filereadable(expand("~/.vimrc.after"))
-  source ~/.vimrc.after
-endif
-
-set guifont=menlo:h12
-colorscheme railscasts2
-hi LineNr guibg=#303030
-
