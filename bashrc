@@ -2,7 +2,7 @@ export BASH_CONF="bashrc"
 if [ -f ~/.databasedotcom.secrets ]; then
    source ~/.databasedotcom.secrets
 fi
-
+## HEY LET'S TEST SOME IOS APPS OUT
 # Infinite history for Bash
 # http://stackoverflow.com/questions/10374019/how-to-get-infinite-command-history-in-bash
 export HISTSIZE="GOTCHA"
