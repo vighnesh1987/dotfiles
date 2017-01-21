@@ -1,5 +1,7 @@
 # Ignore temp files
+*.sw?
 .*.swp
+.*.*.swp
 .*.swo
 .DS_Store
 tags
