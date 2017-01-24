@@ -14,7 +14,15 @@ export HISTCONTROL=erasedups
 # you may want to have Git stop trying earlier than it might otherwise, especially
 # if Git is invoked when building your shell prompt.
 export GIT_CEILING_DIRECTORIES="/home"
-function branchname { git branch 2> /dev/null | GREP_OPTIONS='' grep -e '\* ' | sed 's/^..\(.*\)/[\1]/'; }
+function branchname {
+  if [ -s .hg ]; then
+    hg book | grep -e '^.*\*' | sed -r 's/^\s+(\S+)\s+(\S+)\s+(\S+)$/\2/'
+  elif [ -s .git ]; then
+    git branch 2> /dev/null | GREP_OPTIONS='' grep -e '\* ' | sed 's/^..\(.*\)/[\1]/'; 
+  else 
+    echo '';
+  fi
+}
 alias ga='git add'
 alias gps='git push'
 alias gpl='git pull'
