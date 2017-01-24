@@ -1,8 +1,3 @@
-export BASH_CONF="bashrc"
-if [ -f ~/.databasedotcom.secrets ]; then
-   source ~/.databasedotcom.secrets
-fi
-
 export EDITOR='vim -f'
 export PAGER='less'
 
@@ -19,7 +14,7 @@ export HISTCONTROL=erasedups
 # you may want to have Git stop trying earlier than it might otherwise, especially
 # if Git is invoked when building your shell prompt.
 export GIT_CEILING_DIRECTORIES="/home"
-function branchname { git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/[\1]/'; }
+function branchname { git branch 2> /dev/null | GREP_OPTIONS='' grep -e '\* ' | sed 's/^..\(.*\)/[\1]/'; }
 alias ga='git add'
 alias gps='git push'
 alias gpl='git pull'
@@ -105,3 +100,4 @@ botch() {
     done
 }
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
