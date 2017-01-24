@@ -35,22 +35,22 @@ Plugin 'jistr/vim-nerdtree-tabs'                " :NERDTreeTabsToggle
 Plugin 'majutsushi/tagbar'                      " :TagbarToggle
 
 "-- integrations
-Plugin 'tpope/vim-fugitive'                     " :Gblame
+"Plugin 'tpope/vim-fugitive'                     " :Gblame
 Plugin 'tpope/vim-eunuch'                       " :Remove, :Chmod, :SudoWrite
 
 "-- programming language support
-Plugin 'kchmck/vim-coffee-script'               " coffeescript
-Plugin 'digitaltoad/vim-jade'                   " jade
-Plugin 'tpope/vim-haml'                         " haml
+"Plugin 'kchmck/vim-coffee-script'               " coffeescript
+"Plugin 'digitaltoad/vim-jade'                   " jade
+"Plugin 'tpope/vim-haml'                         " haml
 Plugin 'vim-ruby/vim-ruby'                      " ruby
-Plugin 'zhubert/vim-ruby-fmt'                   " rubyfmt
-Plugin 'tpope/vim-rails'                        " rails
-Plugin 'othree/xml.vim'                         " xml
-Plugin 'fatih/vim-go'                           " golang
+"Plugin 'zhubert/vim-ruby-fmt'                   " rubyfmt
+"Plugin 'tpope/vim-rails'                        " rails
+"Plugin 'othree/xml.vim'                         " xml
+"Plugin 'fatih/vim-go'                           " golang
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'solarnz/thrift.vim'
-Plugin 'rust-lang/rust.vim'                     " rust
+"Plugin 'solarnz/thrift.vim'
+"Plugin 'rust-lang/rust.vim'                     " rust
 
 
 "-- color schemes
@@ -61,7 +61,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'terryma/vim-multiple-cursors'           " TODO
 Plugin 'editorconfig/editorconfig-vim'          " TODO
 
-Plugin 'L9'
+"Plugin 'L9'
 
 "===== src: Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
