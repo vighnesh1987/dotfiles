@@ -162,3 +162,18 @@ export PS1="\n[Exit: \[\033[1;31m\]\${PIPESTATUS[@]/#0/\[\033[0m\]\[\033[1;32m\]
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 source ~/.profile
+
+## stuff added by fbandroid/scripts/setup_environment.sh that I moved out from bash_profile
+export FBANDROID_DIR=/Users/rege/fbsource/fbandroid
+alias quicklog_update=/Users/rege/fbsource/fbandroid/scripts/quicklog/quicklog_update.sh
+alias qlu=quicklog_update
+
+# added by setup_fb4a.sh
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_NDK_REPOSITORY=/opt/android_ndk
+export ANDROID_HOME=${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
+
+export EDITOR=vim
+export DEV=devvm2029.ash4.facebook.com
+export FBID=517282982
