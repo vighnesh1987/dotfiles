@@ -111,3 +111,55 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 #the "gnuman" directory to your MANPATH from your bashrc as well:
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Added by rege as per https://our.intern.facebook.com/intern/dex/installing-java-8/
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=${JAVA_HOME}/bin:${PATH}
+
+# mercurial bookmark
+if [ -f /opt/facebook/share/scm-prompt ]; then
+  source /opt/facebook/share/scm-prompt
+fi
+
+# Show the current bookmark or branch
+export PS1='\u@\h:\W $(_dotfiles_scm_info)\$ '
+
+function parse_hg_branch {
+  if [[ -n $(_dotfiles_scm_info) ]]; then
+    # wrap in parens
+    echo "$(_dotfiles_scm_info)"
+  fi
+}
+
+# Show current hg bookmark
+function hgproml {
+  # here are a bunch of colors in case
+  # you want to get colorful
+  local        BLUE="\[\033[0;34m\]"
+  local         RED="\[\033[0;31m\]"
+  local   LIGHT_RED="\[\033[1;31m\]"
+  local       GREEN="\[\033[0;32m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
+  local       WHITE="\[\033[1;37m\]"
+  local  LIGHT_GRAY="\[\033[0;37m\]"
+  local LIGHT_BLUE="\[\e[1;36m\]"
+  local RESET_COLOR="\[\033[0m\]"
+
+export PS1="\
+$LIGHT_BLUE[\t] \u:$LIGHT_GREEN\w$GREEN\$(parse_hg_branch)$LIGHT_BLUE\
+\$$RESET_COLOR "
+PS2='> '
+PS4='+ '
+}
+
+###### prompt
+export PS1='\[\e[1;36m\][\t] \h:\w$(branchname) \[\e[0m\]'
+
+hgproml
+
+export PS1="\n[Exit: \[\033[1;31m\]\${PIPESTATUS[@]/#0/\[\033[0m\]\[\033[1;32m\]0\[\033[1;31m\]}\[\033[0m\]]\n${PS1}"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+source ~/.profile
