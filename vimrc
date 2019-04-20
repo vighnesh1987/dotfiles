@@ -51,6 +51,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'solarnz/thrift.vim'
 "Plugin 'rust-lang/rust.vim'                     " rust
+Plugin 'vimwiki/vimwiki'
 
 
 "-- color schemes
@@ -140,6 +141,11 @@ let g:vim_markdown_folding_disabled=1
 """" vim-ruby-fmt
 "autocmd FileType ruby autocmd BufWritePost <buffer> Fmt
 "nmap ff :Fmt<CR>
+""""
+
+""""
+let g:vimwiki_list = [{'path': '~/vighnesh1987.github.io/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 """"
 "---------------------------------------------------------------------
 "         Favorite mappings
